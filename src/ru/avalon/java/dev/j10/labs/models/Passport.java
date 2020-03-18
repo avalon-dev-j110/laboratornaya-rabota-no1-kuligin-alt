@@ -15,7 +15,12 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
+public class Passport {
+    
+    private String seria;
+    private String bethday;
+    private String data;
+    private String organ;
 
     /*
      * TODO(Студент): Закончить определение класса.
@@ -37,4 +42,17 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
+    
+    public Passport(String seria, String bethday, String data, String organ) {
+        this.seria = seria;
+        this.bethday = bethday;
+        this.data = data;
+        this.organ = organ;
+    }
+  
+    @Override
+    public String toString() {
+        return "Passport{" + "seria=" + seria + ", bethday=" + bethday + 
+                ", data=" + data + ", organ=" + organ + '}';
+    }
 }

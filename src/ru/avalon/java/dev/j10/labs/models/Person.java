@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 /**
  * Представление о человеке.
  * <p>
@@ -12,6 +14,24 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
+    
+    private String name;
+    private String vtorName;
+    private String familia;
+    private String otchestvo;
+    private Passport dannie;
+    private Address home;
+    
+    public Person(String name, String vtorName, String familia, 
+            String otchestvo, Passport dannie, Address home) {
+        this.name = name;
+        this.vtorName = vtorName;
+        this.familia = familia;
+        this.otchestvo = otchestvo;
+        this.dannie = dannie;
+        this.home = home;
+        
+    }    
 
     /**
      * Возврвщает полное имя человека.
@@ -34,7 +54,12 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        
+        if (vtorName != null) {
+        return name + " " + vtorName.charAt(0) + "." + " " + familia + " " + dannie;
+        } else  {
+        return name + " " + familia + " " + otchestvo + " " + dannie;    
+        }
     }
 
     /**
@@ -49,6 +74,6 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        return name + " " + home;
     }
 }
